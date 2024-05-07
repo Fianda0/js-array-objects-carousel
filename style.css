@@ -19,6 +19,18 @@ body {
     object-position: center;
 }
 
+.carta {
+    position: relative;
+    display: none;
+}
+
+.testo {
+    padding: 1rem;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
 .preview {
     position: relative;
     height: 25rem;
@@ -32,9 +44,6 @@ body {
 
 }
 
-.slide {
-    display: none;
-}
 
 .slide-lateral {
     opacity: 0.2;
