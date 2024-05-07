@@ -81,3 +81,42 @@ document.getElementById('next').addEventListener('click', function () {
 
 })
 
+// inserisco bottone per passare alla slide precedente
+
+document.getElementById('back').addEventListener('click', function () {
+
+
+    // Inizio ciclo for per controllare le immagini
+    for (let i = 0; i < carta.length; i++) {
+
+        const slideControl = carta[i]
+        const slideL = slideLateral[i]
+
+
+        // controllo slide se hanno la classe active
+        if (slideControl.classList.contains('active')) {
+            // se contine ACTIVE lo rimuovo
+            slideControl.classList.remove('active')
+            slideL.classList.remove('active', 'border-lateral')
+
+
+            // segno quale array ha la classe ACTIVE
+            imgActive = i;
+
+        }
+    }
+
+    // seleziono la slide precedente da attivare
+    slideNext = imgActive - 1;
+
+    // se mi trovo alla prima slide torno all'ultima
+    if (slideNext == -1) {
+        slideNext = carta.length - 1;
+    }
+
+    carta[slideNext].classList.add('active')
+    addText[slideNext].innerHTML = `<h3>${images[slideNext].title}</h3>${images[slideNext].text}`
+    slideLateral[slideNext].classList.add('active', 'border-lateral')
+
+})
+
